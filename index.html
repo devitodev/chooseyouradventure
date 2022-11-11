@@ -8,24 +8,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>Gruul's Cavern</title>
 </head>
 <body>
     <div class="title">
-        <h1>Choose Your Own Adventure</h1>
+        <h1>Welcome to Gruul's Cavern</h1>
     </div>
-    <div class="story">
-        <p>You wake up in a pitch black room. You can tell you are on a bed of some kind. After a few moments of feeling around, you find a lamp with your right hand.</p>
+    <div class="main-content">
+        <!-- <p id="story-content">You wake up in a pitch black room. You can tell you are on a bed of some kind. After a few moments of feeling around, your finger-tips touch a lamp.</p> -->
     </div>
-    <div class="currentquestion">
+    <div class="current-question">
         <h2>Will you try to turn it on?</h2>
     </div>
-    <div class="youroptions">
+    <div class="your-options">
         <h3>Yes or No?</h3>
+        <p>Type your answer below...</p>
  
     </div>
     <form class="input">
-        <input type="text">
+        <label for="input">Decision Box</label>
+        <input id="input-text" type="text" placeholder="Choose Here" name="input">
     </form>
    
     <script src="script.js"></script>
