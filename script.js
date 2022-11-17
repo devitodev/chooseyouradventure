@@ -8,11 +8,13 @@ var currentQ = document.querySelector('current-question');
 
 var buttonTime = document.createElement('button')
 buttonTime.innerText = "Start";
-mainContent.innerHTML = '<p> Welcome. Would you like to enter Gruul\'s cavern? </p>' 
+mainContent.innerHTML = '<p> Welcome to Gruul\'s cavern. </p>' 
 
 mainContent.append(buttonTime)
 
 buttonTime.addEventListener('click', startFunction)
+
+
 
 function startFunction() {
     mainContent.innerHTML = ''
@@ -20,8 +22,9 @@ function startFunction() {
    var story2 = 'You wake up in a pitch black room. You can tell you are on a bed of some kind. After a few moments of feeling around, your finger-tips touch a lamp.'
    newText.textContent = story2;
    mainContent.appendChild(newText);
-
 }
+
+
 
 
 // You wake up in a pitch black room. You can tell you are on a bed of some kind. After a few moments of feeling around, your finger-tips touch a lamp.
