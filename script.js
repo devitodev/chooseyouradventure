@@ -1,53 +1,95 @@
-var mainContent = document.querySelector('.main-content');
+// Global variables
 
-var inputDiv = document.querySelector('.input');
+var storyArea = document.querySelector('.text-container');
 
-var userInput = document.querySelector('.input-text');
+var questionContainer = document.querySelector('.question-container');
 
-var currentQ = document.querySelector('current-question');
+var currentQuestion = document.querySelector('.current-question')
 
-var buttonTime = document.createElement('button')
-buttonTime.innerText = "Start";
-mainContent.innerHTML = '<p> Welcome to Gruul\'s cavern. </p>' 
+var buttonContainer = document.querySelector('.btns-container')
 
-mainContent.append(buttonTime)
+var yesButton = document.querySelector('.yes-btn')
 
-buttonTime.addEventListener('click', startFunction)
+var noButton = document.querySelector('.no-btn')
+
+var newText = document.createElement('p');
+
+var tryAgainContainer = document.querySelector('.try-again-container')
+
+var tryAgainButton = document.querySelector('.try-again-btn')
+
+var titleText = storyArea.innerHTML = '<p> Welcome to Gruul\'s cavern. </p>' 
+
+// All Start Button Functions
+
+// Creates start button
+var startBtn = document.createElement('button')
+startBtn.style.marginLeft = '135px'
+
+// Adds story button to the page
+storyArea.append(startBtn)
 
 
+// Creates text for Start button
+startBtn.innerText = "Start";
 
-function startFunction() {
-    mainContent.innerHTML = ''
-   var newText = document.createElement('p');
-   var story2 = 'You wake up in a pitch black room. You can tell you are on a bed of some kind. After a few moments of feeling around, your finger-tips touch a lamp.'
+// Variable for clicking the start button
+var showStory = startBtn.addEventListener('click', storyAppear)
+
+// Function for initiating the story
+function storyAppear() {
+    storyArea.innerHTML = ''
+   var story2 = 'You wake up in a pitch black room. Your forehead is covered with sweat. You can tell you are on an old, rusty bed of some kind. After a few moments of panic, your finger-tips touch a lamp switch.'
    newText.textContent = story2;
-   mainContent.appendChild(newText);
+   storyArea.appendChild(newText);
 }
 
+// Click for appearing question
+var showQuestion = startBtn.addEventListener('click', questionAppear)
 
-
-
-// You wake up in a pitch black room. You can tell you are on a bed of some kind. After a few moments of feeling around, your finger-tips touch a lamp.
-
-// userInput.addEventListener('input',)
-
-// var ifYes1 = 'You turn on the lamp and you see a large, green ogre...'
-
-// var ifNo1 = 'You decide to move in the dark. You carefully step off of the cot. You hear a deep growl. YOU LOSE'
-
-clickEvent = inputDiv.addEventListener('click', changeSomething);
-
-function changeSomething() {
-        if(clickEvent) {
-            userInput.style.display = 'none'
-        }
+// Function for making question appear
+function questionAppear() {
+    questionContainer.style.display = 'block';
 }
 
-// function nextStep(userInput, currentStory) {
-//     if(userInput = 'yes') {
-//         currentStory = currentStory.textinput = ifYes1;
-//     }
-// }
+var showOptions = startBtn.addEventListener('click', optionsAppear)
+
+function optionsAppear() {
+        buttonContainer.style.display = 'flex';
+
+}
+
+var yesClick = yesButton.addEventListener('click', yesChoice)
+var noClick = noButton.addEventListener('click', noChoice)
+var tryAgainClick = tryAgainButton.addEventListener('click', goHome)
+
+function yesChoice () {
+        var story3 = 'You turn on the light, and you see a haggard, sneering green monster sitting in a chair across the room. He scowls at you and shouts "It\'s about damn time you woke up. I\'m hungry! You ready to grab something to eat?"'
+        newText.textContent = story3;
+        storyArea.appendChild(newText);
+        questionTwo = 'Will you go eat with Gruul?'
+        currentQuestion.textContent = questionTwo
+    }
+
+function noChoice () {
+    var story4 = 'You decide to wait it out. You close your eyes and decide to go back to sleep. It\'s just a dream right? Wrong. After a few seconds of closing your eyes again, a deep bellowing voice exclaims "I DIDN\'T KNOW I HAD CAPTURED A COWARD!" Your head is then crushed in with a giant club.'
+    newText.textContent = story4;
+    storyArea.appendChild(newText);
+    questionContainer.style.display = 'none'
+    yesButton.style.display = 'none'
+    noButton.style.display = 'none'
+    tryAgainContainer.style.display = 'block'
+}
+
+function goHome () {
+        window.location.href='index.html'
+    }
+
+
+
+
+
+
 
 
 
